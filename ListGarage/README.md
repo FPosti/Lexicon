@@ -1,4 +1,4 @@
-# GarageArrays
+# GarageLists
 
 En konsolapplikation i C# som simulerar ett garage. Projektet är en övning i arrayer, arv och inkapsling.
 

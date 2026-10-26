@@ -1,4 +1,4 @@
-namespace GarageArrays
+namespace GarageLists
 {
     // En abstrakt klass samlar det som fordonstyperna har gemensamt.
     // Den kan inte skapas med new Vehicle; i stället skapar man exempelvis en Car.

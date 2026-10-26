@@ -1,4 +1,4 @@
-namespace GarageArrays;
+namespace GarageLists;
 
 internal static class RegistrationNumberValidator
 {

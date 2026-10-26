@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace GarageArrays;
+namespace GarageLists;
 
 internal static class ConsoleInput
 {
