@@ -12,3 +12,6 @@ Varje projekt ligger i en egen mapp.
 
 Skapa en ny mapp i repots rot, lägg projektets filer där och gör en commit.
 Byggfiler och Visual Studio-cache ska inte laddas upp.
+
+
+Vad tycker du om min kod design?
