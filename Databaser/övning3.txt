@@ -1,0 +1,24 @@
+1. Vad innebär lastbalansering?
+Lastbalansering innebär att man delar upp arbetet mellan flera resurser, till exempel fördela besökarnas förfrågningar mellan flera servrar så att en enda server slipper hantera allt.
+
+2. Ge ett konkret exempel där lastbalansering är bra att använda.
+När biljetter till ett populärt event släpps går många in på hemsidan samtidigt och försöker beställa biljetter.
+Lastbalanserare kan då fördela besökarna mellan flera webbservrar.
+
+3. Vilka tre fördelar har lastbalansering för en hemsida?
+När flera servrar delar på arbetet kan besökarna få kortare svarstider även vid hög belastning.
+Om en server slutar fungera kan de andra fortsätta ta emot förfrågningar så att sidan fortfarande går att använda.
+Kan även öka kapaciteten genom att lägga till en webbserver om hemsidan får fler besökare.
+
+4. Vad är SQL Server Replication?
+Replikering innebär att SQL Server kopierar utvalda data från en databas till en eller flera andra databaser och håller dem synkroniserade.
+Ett företag kan tex kopiera försäljningsdata till en separat databas där personalen tar fram rapporter.
+
+5. Vad är Mirroring i SQL Server?
+Mirroring innebär att en databas på en server har en spegelkopia på en annan server.
+Ändringar förs över till spegelkopian så att den kan ta över om huvudservern slutar fungera.
+
+6. Vad är Always On Availability Groups i SQL Server?
+En tillgänglighetsgrupp gör att en eller flera databaser kan hållas tillgängliga tillsammans.
+Ändringar på den primära servern förs över till sekundära servrar.
+Om den primära servern slutar fungera kan en sekundär server ta över gruppen. 
