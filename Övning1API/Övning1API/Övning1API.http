@@ -1,0 +1,6 @@
+@Övning1API_HostAddress = http://localhost:5286
+
+GET {{Övning1API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
