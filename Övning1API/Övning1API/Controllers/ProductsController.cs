@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Övning1API.DTOs;
 using Övning1API.Models;
 
 [Route("api/[controller]")]
@@ -33,6 +34,35 @@ public class ProductsController : ControllerBase
         return product;
     }
 
+    [HttpGet("GetStats")]
+    public Task<ActionResult<ProductStatsDto>> GetStats()
+    {
+        var fakeProducts = new List<Product>()
+        {
+            new() { Price = 10, Count = 2 },
+            new() { Price = 11, Count = 3 },
+            new() { Price = 12, Count = 5 },
+        };
+        
+        var products = fakeProducts;
+        
+        //var products = await _context.Product.ToListAsync();
+ 
+        if (products.Count == 0)
+        {
+            return Task.FromResult<ActionResult<ProductStatsDto>>(NotFound());
+        }
+
+        var avgPrice = products.Sum(p => p.Price) / products.Count;
+        var totalValue = products.Sum(p => p.Price * p.Count);
+        return Task.FromResult<ActionResult<ProductStatsDto>>(new ProductStatsDto
+        {
+            AvgPrice = avgPrice,
+            TotalNumberOfProducts = products.Count,
+            TotalValue = totalValue
+        });
+    }
+    
     // PUT: api/Product/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
