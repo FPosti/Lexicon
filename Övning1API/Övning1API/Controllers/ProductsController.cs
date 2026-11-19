@@ -35,8 +35,9 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet("GetStats")]
-    public Task<ActionResult<ProductStatsDto>> GetStats()
+    public async Task<ActionResult<ProductStatsDto>> GetStats()
     {
+        /*
         var fakeProducts = new List<Product>()
         {
             new() { Price = 10, Count = 2 },
@@ -45,24 +46,24 @@ public class ProductsController : ControllerBase
         };
         
         var products = fakeProducts;
-        
-        //var products = await _context.Product.ToListAsync();
- 
+        */
+        var products = await _context.Product.ToListAsync();
+
         if (products.Count == 0)
         {
-            return Task.FromResult<ActionResult<ProductStatsDto>>(NotFound());
+            return NotFound();
         }
 
         var avgPrice = products.Sum(p => p.Price) / products.Count;
         var totalValue = products.Sum(p => p.Price * p.Count);
-        return Task.FromResult<ActionResult<ProductStatsDto>>(new ProductStatsDto
+        return new ProductStatsDto
         {
             AvgPrice = avgPrice,
             TotalNumberOfProducts = products.Count,
             TotalValue = totalValue
-        });
+        };
     }
-    
+
     // PUT: api/Product/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
