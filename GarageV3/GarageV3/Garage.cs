@@ -23,7 +23,8 @@ public sealed class Garage<T> : IEnumerable<T> where T : Vehicle
     }
     public T? FindByRegistration(string registrationNumber)
     {
-        int index = FindIndexByRegistration(registrationNumber); if (index == -1)
+        int index = FindIndexByRegistration(registrationNumber); 
+        if (index == -1)
         {
             return null;
         }
